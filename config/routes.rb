@@ -13,7 +13,11 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  get '/coupons', to: "coupons#index"
+  get '/coupons/new', to: "coupons#new", as: "new_coupon"
+  get '/coupons/:id',to: "coupons#show", as: "coupon"
+  
+  post '/coupons', to: "coupons#create"
   # Example resource route with options:
   #   resources :products do
   #     member do
